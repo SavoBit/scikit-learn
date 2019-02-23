@@ -303,13 +303,9 @@ class _CFSubcluster:
         new_sq_norm = np.dot(new_centroid, new_centroid)
         dot_product = -2 * np.dot(new_ls, new_centroid)
         sq_radius = (new_ss + dot_product) / new_n + new_sq_norm
-        # print(sq_radius)
         if sq_radius <= threshold ** 2:
-            # print("radius < threshold")
             (self.n_samples_, self.linear_sum_, self.squared_sum_,
-             self.centroid_, self.sq_norm_) = \
-                new_n, new_ls, new_ss, new_centroid, new_norm
-                new_n, new_ls, new_ss, new_centroid, new_sq_norm
+             self.centroid_, self.sq_norm_) = new_n, new_ls, new_ss, new_centroid, new_sq_norm
             return True
         return False
 
